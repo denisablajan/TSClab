@@ -1,6 +1,1 @@
-*
-!.gitattributes
-!.gitignore
-!README.MD
-!.gitkeep
-!*/sim
+/Lab3/sim/*
