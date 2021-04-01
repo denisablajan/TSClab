@@ -23,7 +23,7 @@ interface tb_ifc (input logic clk);
 
   // ADD CODE TO DEFINE A CLOCKING BLOCK WITH INPUT AND OUTPUT SKEWS
 
-  clocking cb @(clk);
+  clocking cb @(posedge clk);
     default input #15ns output #10ns;
     output load_en;
     output reset_n;

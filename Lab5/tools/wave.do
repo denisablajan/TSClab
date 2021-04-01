@@ -2,6 +2,14 @@ onerror {resume}
 quietly WaveActivateNextPane {} 0
 add wave -noupdate /top/clk
 add wave -noupdate /top/test_clk
+add wave -noupdate /top/io/instruction_word
+add wave -noupdate /top/io/load_en
+add wave -noupdate /top/io/opcode
+add wave -noupdate /top/io/operand_a
+add wave -noupdate /top/io/operand_b
+add wave -noupdate /top/io/read_pointer
+add wave -noupdate /top/io/reset_n
+add wave -noupdate /top/io/write_pointer
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {{Cursor 1} {0 ns} 0}
 quietly wave cursor active 0
