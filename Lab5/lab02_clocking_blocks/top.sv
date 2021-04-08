@@ -15,7 +15,7 @@ module top;
 
   // clock variables
   logic clk;
-  //logic test_clk;
+  // logic test_clk;
 
  // instantiate the testbench interface
   tb_ifc io (.clk(clk));
@@ -39,20 +39,17 @@ module top;
   // clock oscillators
   initial begin
     clk <= 0;
-    forever #5  clk = ~clk;
+    forever #5ns  clk = ~clk;
   end
 
-  /*initial begin
-    test_clk <=0;
-    // offset test_clk edges from clk to prevent races between
-    // the testbench and the design
-    //
-    // THIS TEST CLOCK WILL BE REPLACED BY A CLOCKING BLOCK IN THE
-    // INTERFACE BETWEEN THE TESTBENCH AND THE DUT
-    #4 forever begin
-      #2ns test_clk = 1'b1;
-      #8ns test_clk = 1'b0;
-    end
-  end*/
+//  initial begin
+//    test_clk <=0;
+//    // offset test_clk edges from clk to prevent races between
+//    // the testbench and the design
+//    #4 forever begin
+//      #2ns test_clk = 1'b1;
+//      #8ns test_clk = 1'b0;
+//    end
+//  end
 
 endmodule: top

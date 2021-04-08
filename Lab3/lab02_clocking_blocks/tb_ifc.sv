@@ -21,17 +21,11 @@ interface tb_ifc (input logic clk);
   address_t      write_pointer, read_pointer;
   instruction_t  instruction_word;
 
+  clocking cb @(posedge clk);
+    inout  operand_a, operand_b, opcode, write_pointer, read_pointer;
+    output load_en, reset_n;
+    input  instruction_word;
+  endclocking;
   // ADD CODE TO DEFINE A CLOCKING BLOCK WITH INPUT AND OUTPUT SKEWS
 
-  clocking cb @(clk);
-    default input #15ns output #10ns;
-    output load_en;
-    output reset_n;
-    output opcode;
-    output operand_a, operand_b;
-    output write_pointer, read_pointer;
-    input instruction_word;
-  endclocking
-
 endinterface: tb_ifc
-
